@@ -1,0 +1,108 @@
+/*font-size*/
+@mixin fontSize($size, $lineHeight) {
+  @if ($size == "xsmall"){
+    font-size:1rem;
+    line-height:$lineHeight;
+  } @else if($size == "small"){
+    font-size:1.2rem;
+    line-height:$lineHeight;
+  } @else if($size == "medium"){
+    font-size:1.4rem;
+    line-height:$lineHeight;
+    font-weight:400;
+  } @else if($size == "large"){
+    font-size:1.6rem;
+    line-height:$lineHeight;
+    font-weight:700;
+    letter-spacing: -0.5px;
+  } @else if($size == "xlarge"){
+    font-size:2rem;
+    line-height:$lineHeight;
+    font-weight:700;
+    letter-spacing: -1px;
+  } 
+}
+
+/* buttons */
+@mixin set-buttons($color, $background, $border, $type){
+  color : $color;
+  background-color:$background;
+  border-color:$border;
+  &:active{
+    background-color: darken($background, 6%);
+  }
+  // @if ($type == 'line'){
+  //   &:focus, &:hover {
+  //     color: $background;
+  //     background-color: $color;
+  //   }
+  // } @else {
+  //   &:focus, &:hover {
+  //     color: $color;
+  //     background-color: darken($background, 10%);
+  //     border-color: darken($border, 10%);
+  //   }
+  // }
+}
+@mixin svgIcon($name, $color){
+  $color: '%23'+ $color;
+  @if($name == 'camera'){
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg%3E%3Cg%3E%3Cg%3E%3Cpath d='M0 0L40 0 40 40 0 40z' transform='translate(-121 -562) translate(24 552) translate(97 10)'/%3E%3Cg fill='#{$color}' fill-rule='nonzero'%3E%3Cg%3E%3Cpath d='M21.087 3.283h-2.499l-1.38-2.049C16.688.466 15.777.005 14.84.005H9.112c-.937 0-1.849.461-2.37 1.23L5.364 3.282h-2.5C1.277 3.283 0 4.538 0 6.1v9.937c0 1.562 1.276 2.817 2.864 2.817h18.223c1.589 0 2.864-1.255 2.864-2.817V6.1c0-1.562-1.275-2.817-2.864-2.817zM11.976 16.55c-3.567 0-6.457-2.843-6.457-6.351 0-3.509 2.89-6.326 6.457-6.326 3.566 0 6.456 2.843 6.456 6.351 0 3.483-2.89 6.326-6.456 6.326zm8.747-9.296H19.577c-.468-.026-.833-.41-.807-.871.026-.435.365-.768.807-.794h1.042c.468-.025.859.333.885.794.026.461-.312.845-.781.87z' transform='translate(-121 -562) translate(24 552) translate(97 10) translate(8 9)'/%3E%3Cpath d='M11.976 6.69c-1.979 0-3.593 1.587-3.593 3.533 0 1.947 1.614 3.509 3.593 3.509 1.978 0 3.592-1.588 3.592-3.534 0-1.946-1.614-3.509-3.592-3.509z' transform='translate(-121 -562) translate(24 552) translate(97 10) translate(8 9)'/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+}
+// @mixin buttonSize($minWidth, $fontSize, $borderRadius){
+//   min-width:$minWidth;
+//   font-size:$fontSize;
+//   border-radius:$borderRadius;
+// }
+@mixin ellipsis($line: 1, $height) {
+  @if ($line == 1) {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      height:$height;
+  } @else {
+      display: -webkit-box;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      height:$height;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: $line;
+  }
+}
+//text ellipsis
+@mixin ellipsis($line, $height) {
+  @if ($line == 1) {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      height:$height;
+  } @else {
+      display: -webkit-box;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      height:$height;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: $line;
+  }
+}
+
+/* ios notch */
+@mixin safeArea($direction, $height){
+    padding-#{$direction}: $height;
+    padding-#{$direction}: calc(constant(safe-area-inset-#{$direction}) + $height);
+    padding-#{$direction}: calc(env(safe-area-inset-#{$direction}) + $height);
+}
+
+/* media query */
+@mixin media($widthSize) {
+  @if ($widthSize == "width1") {
+    @media (min-width: $media-width1) and (max-width: $media-width2) {@content;} //320 ~ 360
+  }@else if($widthSize == "width2") {
+    @media (min-width: $media-width4 + 1) and (max-width: $media-width5) {@content;}//414 ~ 640
+  }@else if($widthSize == "width3") {
+    @media (min-width: $media-width5 + 1) and (max-width: $media-width6) {@content;}//640 ~ 768
+  }@else if($widthSize == "width4") {
+    @media (min-width: $media-width5 + 1) and (max-width:1024px) {@content;}//768 ~ 1024
+  }
+}

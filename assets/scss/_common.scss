@@ -1,0 +1,82 @@
+* {
+  word-break:break-all;
+  box-sizing:border-box;
+  // -webkit-touch-callout: none;
+  // -webkit-User-select: none;
+  // user-select: none;
+  // touch-action: manipulation;
+  // -webkit-tap-highlight-color: transparent;
+  padding:0;
+  margin:0;
+}
+html{
+  -webkit-text-size-adjust:none; 
+  font-size:62.5%;
+}
+body{
+  width:100%;
+  overflow-x:hidden;
+  font-family:"맑은 고딕", "Malgun Gothic", "Apple SD Gothic Neo", sans-serif;
+  font-size:1.4rem;
+  line-height:1.2;
+  font-weight:400;
+  color:#333;
+  background:#f3f3f3;
+}
+// body,div,ul,li,dl,dd,dt,ol,h1,h2,h3,h4,h5,h6,input,fieldset,legend,p,select,
+// table,th,td,tr,textarea,button,form,figure,figcaption{
+//   margin:0;
+//   padding:0;
+// }
+a, a:hover{
+  text-decoration: none; 
+  color:#333;
+}
+em{
+  color:red;
+}
+ul, li, ol {
+  list-style: none;
+}
+button{
+  border: 0;
+}
+img {
+  width: 100%; 
+  vertical-align: top; 
+  border:0;
+}
+.hidden{
+  overflow: hidden;
+  display:inline-block;
+  position:relative;
+  z-index:-1;
+  border: 0;
+  width: 1px;
+  height: 1px;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path:inset(50%);
+}
+.txt-color{
+  &1{color: $font_c1 !important;}
+  &2{color: $font_c2 !important;}
+  &3{color: $font_c3 !important;}
+  &4{color: $font_c4 !important;}
+  &5{color: $font_c5 !important;}
+}
+
+@include media('width1'){
+  body{
+    // background-color:#f90094
+  }
+}
+@include media('width2'){
+  body{
+    // background-color:#ff0;
+  }
+}
+@include media('width3'){
+  body{
+    // background-color:#00f;
+  }
+}

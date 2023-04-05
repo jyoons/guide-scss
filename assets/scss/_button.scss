@@ -1,0 +1,97 @@
+.btn{
+  &-wrap{
+    display:flex;
+    align-items: center;
+  }
+  position:relative;
+  display:inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-width:10rem;
+  height:4rem;
+  padding:0.8rem 2rem;
+  border-radius:2rem;
+  border:1px solid transparent;
+  transition:background-color .2s ease-in-out; //hover
+  @include fontSize('medium' , 1);
+  &.primary{
+    @include set-buttons($btn-c2, $btn-bg1, $btn-bg1, 0)
+  }
+  &.secondary{
+    @include set-buttons($btn-c2, $btn-bg3, $btn-bg3, 0)
+  }
+  &.disabled,  &:disabled{
+    cursor: not-allowed;
+    @include set-buttons($btn-c4, $btn-bg4, $btn-bg4, 0)
+  }
+  &.line-primary{
+    @include set-buttons($btn-c1, $btn-bg2, $btn-bg1, 'line')
+  }
+  &.line-secondary{
+    @include set-buttons($btn-c3, $btn-bg2, $btn-bg3, 'line')
+  }
+  &.xs{
+    min-width:auto;
+    height:2rem;
+    border-radius:1rem;
+    @include fontSize('small' , 1);
+  }
+  &.sm{
+    min-width:auto;
+    height:3rem;
+    border-radius:1.6rem;
+    @include fontSize('small' , 1);
+  }
+  &.lg{
+    min-width:16rem;
+    height:6rem;
+    border-radius:3rem;
+    @include fontSize('large' , 1);
+  }
+  &-icon{
+    &>i {
+      display:block;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+    .ico-arrow{
+      width:.6rem;
+      height:.6rem;
+      border-right:1px solid $btn-bg3;
+      border-top:1px solid $btn-bg3;
+      transform: rotate(45deg);
+      &.down{
+        width:0.8rem;
+        height:0.8rem;
+        transform: rotate(135deg);
+        margin-left:0.6rem;
+        margin-top:-0.4rem;
+      }
+    }
+    .ico-camera{
+      width:2.6rem;
+      height:2.6rem;
+      @include svgIcon('camera', 222);
+    }
+    // &[class*='line-']:hover i, &[class*='line-']:hover i{
+    //   border-color: $btn-bg2;
+    // }
+    // &[class*='line-']:hover i.ico-camera, &[class*='line-']:focus i.ico-camera{
+    //   @include svgIcon('camera', fff);
+    // }
+    &>span + i, &>i + span{margin-left:0.4rem;}
+  }
+  &-text{
+    color:$font_c5;
+    text-decoration: underline;
+    @include fontSize('medium' , 1);
+    
+  }
+  &-textIcon{
+    display:inline-flex;
+    align-items:center;
+    color:$font_c5;
+    @include fontSize('medium' , 1);
+  }
+}

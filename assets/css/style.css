@@ -1,0 +1,265 @@
+@charset "UTF-8";
+/*font-size*/
+/* buttons */
+/* ios notch */
+/* media query */
+* {
+  word-break: break-all;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  -webkit-text-size-adjust: none;
+  font-size: 62.5%;
+}
+
+body {
+  width: 100%;
+  overflow-x: hidden;
+  font-family: "맑은 고딕", "Malgun Gothic", "Apple SD Gothic Neo", sans-serif;
+  font-size: 1.4rem;
+  line-height: 1.2;
+  font-weight: 400;
+  color: #333;
+  background: #f3f3f3;
+}
+
+a, a:hover {
+  text-decoration: none;
+  color: #333;
+}
+
+em {
+  color: red;
+}
+
+ul, li, ol {
+  list-style: none;
+}
+
+button {
+  border: 0;
+}
+
+img {
+  width: 100%;
+  vertical-align: top;
+  border: 0;
+}
+
+.hidden {
+  overflow: hidden;
+  display: inline-block;
+  position: relative;
+  z-index: -1;
+  border: 0;
+  width: 1px;
+  height: 1px;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+}
+
+.txt-color1 {
+  color: #222 !important;
+}
+.txt-color2 {
+  color: #b715f4 !important;
+}
+.txt-color3 {
+  color: #006ee0 !important;
+}
+.txt-color4 {
+  color: #f90094 !important;
+}
+.txt-color5 {
+  color: #666 !important;
+}
+
+.btn {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 10rem;
+  height: 4rem;
+  padding: 0.8rem 2rem;
+  border-radius: 2rem;
+  border: 1px solid transparent;
+  transition: background-color 0.2s ease-in-out;
+  font-size: 1.4rem;
+  line-height: 1;
+  font-weight: 400;
+}
+.btn-wrap {
+  display: flex;
+  align-items: center;
+}
+.btn.primary {
+  color: #fff;
+  background-color: #f90094;
+  border-color: #f90094;
+}
+.btn.primary:active {
+  background-color: #da0082;
+}
+.btn.secondary {
+  color: #fff;
+  background-color: #495057;
+  border-color: #495057;
+}
+.btn.secondary:active {
+  background-color: #3b4146;
+}
+.btn.disabled, .btn:disabled {
+  cursor: not-allowed;
+  color: #bbb;
+  background-color: #ebebeb;
+  border-color: #ebebeb;
+}
+.btn.disabled:active, .btn:disabled:active {
+  background-color: gainsboro;
+}
+.btn.line-primary {
+  color: #f90094;
+  background-color: #FFF;
+  border-color: #f90094;
+}
+.btn.line-primary:active {
+  background-color: #f0f0f0;
+}
+.btn.line-secondary {
+  color: #495057;
+  background-color: #FFF;
+  border-color: #495057;
+}
+.btn.line-secondary:active {
+  background-color: #f0f0f0;
+}
+.btn.xs {
+  min-width: auto;
+  height: 2rem;
+  border-radius: 1rem;
+  font-size: 1.2rem;
+  line-height: 1;
+}
+.btn.sm {
+  min-width: auto;
+  height: 3rem;
+  border-radius: 1.6rem;
+  font-size: 1.2rem;
+  line-height: 1;
+}
+.btn.lg {
+  min-width: 16rem;
+  height: 6rem;
+  border-radius: 3rem;
+  font-size: 1.6rem;
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+.btn-icon > i {
+  display: block;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.btn-icon .ico-arrow {
+  width: 0.6rem;
+  height: 0.6rem;
+  border-right: 1px solid #495057;
+  border-top: 1px solid #495057;
+  transform: rotate(45deg);
+}
+.btn-icon .ico-arrow.down {
+  width: 0.8rem;
+  height: 0.8rem;
+  transform: rotate(135deg);
+  margin-left: 0.6rem;
+  margin-top: -0.4rem;
+}
+.btn-icon .ico-camera {
+  width: 2.6rem;
+  height: 2.6rem;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg%3E%3Cg%3E%3Cg%3E%3Cpath d='M0 0L40 0 40 40 0 40z' transform='translate(-121 -562) translate(24 552) translate(97 10)'/%3E%3Cg fill='%23222' fill-rule='nonzero'%3E%3Cg%3E%3Cpath d='M21.087 3.283h-2.499l-1.38-2.049C16.688.466 15.777.005 14.84.005H9.112c-.937 0-1.849.461-2.37 1.23L5.364 3.282h-2.5C1.277 3.283 0 4.538 0 6.1v9.937c0 1.562 1.276 2.817 2.864 2.817h18.223c1.589 0 2.864-1.255 2.864-2.817V6.1c0-1.562-1.275-2.817-2.864-2.817zM11.976 16.55c-3.567 0-6.457-2.843-6.457-6.351 0-3.509 2.89-6.326 6.457-6.326 3.566 0 6.456 2.843 6.456 6.351 0 3.483-2.89 6.326-6.456 6.326zm8.747-9.296H19.577c-.468-.026-.833-.41-.807-.871.026-.435.365-.768.807-.794h1.042c.468-.025.859.333.885.794.026.461-.312.845-.781.87z' transform='translate(-121 -562) translate(24 552) translate(97 10) translate(8 9)'/%3E%3Cpath d='M11.976 6.69c-1.979 0-3.593 1.587-3.593 3.533 0 1.947 1.614 3.509 3.593 3.509 1.978 0 3.592-1.588 3.592-3.534 0-1.946-1.614-3.509-3.592-3.509z' transform='translate(-121 -562) translate(24 552) translate(97 10) translate(8 9)'/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+.btn-icon > span + i, .btn-icon > i + span {
+  margin-left: 0.4rem;
+}
+.btn-text {
+  color: #666;
+  text-decoration: underline;
+  font-size: 1.4rem;
+  line-height: 1;
+  font-weight: 400;
+}
+.btn-textIcon {
+  display: inline-flex;
+  align-items: center;
+  color: #666;
+  font-size: 1.4rem;
+  line-height: 1;
+  font-weight: 400;
+}
+
+.custom-chk {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  align-content: center;
+}
+.custom-chk input[type=checkbox] {
+  width: 2.4rem;
+  height: 2.4rem;
+  flex: 0 0 2.4rem;
+  appearance: none;
+  -webkit-appearance: none;
+  opacity: 0;
+  cursor: pointer;
+}
+.custom-chk input[type=checkbox] + label {
+  padding-left: 0.6rem;
+  font-size: 1.4rem;
+  line-height: 1.2;
+  font-weight: 400;
+  word-break: keep-all;
+}
+.custom-chk input[type=checkbox] + label::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2.4rem;
+  height: 2.4rem;
+  background-color: #fff;
+  border: 1px solid #999;
+  border-radius: 5px;
+}
+.custom-chk input[type=checkbox] + label em {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%) rotate(-50deg);
+}
+.custom-chk input[type=checkbox] + label em:before, .custom-chk input[type=checkbox] + label em:after {
+  content: "";
+  position: absolute;
+  background-color: #f00;
+}
+.custom-chk input[type=checkbox] + label em:before {
+  width: 2px;
+  height: 10px;
+  top: 0;
+  left: 0;
+}
+.custom-chk input[type=checkbox] + label em:after {
+  width: 20px;
+  height: 2px;
+  top: 10px;
+}
+.custom-chk input[type=checkbox]:checked + label::before {
+  background-color: #0B48BE;
+  border: 0;
+}
